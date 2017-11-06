@@ -48,9 +48,10 @@
             fclose($fh);
         }
         
-//        $query = "INSERT INTO `personen` (`naam`, `adres`, `woonplaats`, `gender`) VALUES ( 'gerard', 'adres', 'mepp', 'Male');  ";
         
-        $query = "INSERT INTO `personen` (`naam`, `adres`, `woonplaats`, `gender`) VALUES ( '$naam', '$adres', '$woonplaats', '$gender  ";
+        $query = "INSERT INTO `personen` (`naam`, `adres`, `woonplaats`, `gender`) VALUES ( '$naam', '$adres', '$woonplaats', '$gender'  )";
+        
+        echo $query;
         $result = $connectie->query($query);
 
         $query =  "SELECT * FROM `personen` ";
@@ -59,8 +60,13 @@
 
         $rows = $result->num_rows;
         for ($i = 0; $i < $rows ; $i++){
+            
             $result->data_seek($i);
             echo "\n <br>naam : ".$result->fetch_assoc()['naam'];
+            echo "\n <br>adres : ".$result->fetch_assoc()['adres'];
+            echo "\n <br>woonplaats : ".$result->fetch_assoc()['woonplaats'];
+            echo "\n <br>gender : ".$result->fetch_assoc()['gender'];
+            echo "<br>";
         }
         
         

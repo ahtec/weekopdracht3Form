@@ -1,0 +1,17 @@
+
+naam: naama;
+adres: adresa;
+Woonplaats: plaatss;
+Gender : male;
+naam: naama;
+adres: adresa;
+Woonplaats: plaatss;
+Gender : male;
+naam: naama;
+adres: adresa;
+Woonplaats: plaatss;
+Gender : male;
+naam: naama;
+adres: adresa;
+Woonplaats: plaatss;
+Gender : male;
