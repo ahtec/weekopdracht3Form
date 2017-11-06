@@ -1,5 +1,0 @@
-
-naam: gerard;
-adres: /lzsdk;
-Woonplaats: ;LK;LK;
-Gender : male;

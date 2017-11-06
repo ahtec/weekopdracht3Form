@@ -10,11 +10,21 @@
         <?php
         
         define("ROOMNUMBER",204);
+//        $connectie = new mysqli('localhost', 'root', 'root', 'dbPersonen');
+        $connectie = new mysqli('localhost', 'root', '', 'dbPersonen');
+        if ($connectie->connect_error) die($connectie->connect_error);
         
-        $naam = $_GET['naam'];
-        $gender = $_GET['gender'];
         
-        echo $gender;
+      //INSERT INTO `personen` (`naam`, `adres`, `woonplaats`, `gender`) VALUES ('gerard', 'adres', 'mepp', 'Male');  
+        
+        
+        $naam       = $_GET['naam'];
+        $adres      = $_GET['adres'];
+        $woonplaats = $_GET['woonplaats'];        
+        $gender     = $_GET['gender'];
+        
+        
+//        echo $gender;
         
 
         $regel = "naam: " . $_GET['naam'];
@@ -38,7 +48,25 @@
             fclose($fh);
         }
         
-                header("Location: index.php");
+//        $query = "INSERT INTO `personen` (`naam`, `adres`, `woonplaats`, `gender`) VALUES ( 'gerard', 'adres', 'mepp', 'Male');  ";
+        
+        $query = "INSERT INTO `personen` (`naam`, `adres`, `woonplaats`, `gender`) VALUES ( '$naam', '$adres', '$woonplaats', '$gender  ";
+        $result = $connectie->query($query);
+
+        $query =  "SELECT * FROM `personen` ";
+ 
+        $result = $connectie->query($query);
+
+        $rows = $result->num_rows;
+        for ($i = 0; $i < $rows ; $i++){
+            $result->data_seek($i);
+            echo "\n <br>naam : ".$result->fetch_assoc()['naam'];
+        }
+        
+        
+        $result;
+        
+//                header("Location: index.php");
         exit;
 
         ?>
