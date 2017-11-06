@@ -63,8 +63,11 @@
             
             $result->data_seek($i);
             echo "\n <br>naam : ".$result->fetch_assoc()['naam'];
+            $result->data_seek($i);
             echo "\n <br>adres : ".$result->fetch_assoc()['adres'];
+            $result->data_seek($i);
             echo "\n <br>woonplaats : ".$result->fetch_assoc()['woonplaats'];
+            $result->data_seek($i);
             echo "\n <br>gender : ".$result->fetch_assoc()['gender'];
             echo "<br>";
         }

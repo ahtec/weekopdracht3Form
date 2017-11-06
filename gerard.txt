@@ -3,3 +3,7 @@ naam: gerard;
 adres: Luzz]e;
 Woonplaats: ;
 Gender : male;
+naam: Gerard;
+adres: Luzernevlinder;
+Woonplaats: MEPPEL;
+Gender : male;

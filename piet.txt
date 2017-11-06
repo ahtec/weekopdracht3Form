@@ -1,0 +1,5 @@
+
+naam: piet;
+adres: pieterstraat;
+Woonplaats: pietersum;
+Gender : male;
