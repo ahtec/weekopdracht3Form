@@ -62,11 +62,18 @@ horizontaal is: \n dat de eerste en de laatste horizontale positie hetzelfde zij
                 <tr> <td> Naam           </td> <td>  <input type="text" name="naam" >  </td>
                 <tr> <td> Adres          </td> <td>  <input type="text" name="adres" ></td>
                 <tr> <td> Woonplaats     </td> <td>  <input type="text" name="woonplaats" ></td>
+                <tr> <td>   
+
+                        <input type="radio" name="gender" value="male" checked> Male<br>
+                        <input type="radio" name="gender" value="female"> Female<br>
+
+                    </td>
             </table>
             <br>
 
             <br><br>
             <input type="submit" value="bewaar persoon">
+            
         </form>   
 
 
