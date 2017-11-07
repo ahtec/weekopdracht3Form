@@ -1,5 +1,0 @@
-
-naam: ertyuio;
-adres: ;
-Woonplaats: ;
-Gender : male;

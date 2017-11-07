@@ -1,5 +1,0 @@
-
-naam: gerard2;
-adres: Luzernevlinder;
-Woonplaats: MEPPEL;
-Gender : male;

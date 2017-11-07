@@ -1,5 +1,0 @@
-
-naam: hans;
-adres: kerkstraat;
-Woonplaats: antwerpen;
-Gender : male;

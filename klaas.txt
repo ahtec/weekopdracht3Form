@@ -1,9 +1,0 @@
-
-naam: klaas;
-adres: voorstraat;
-Woonplaats: utrecht;
-Gender : male;
-naam: Klaas;
-adres: kerkstraat;
-Woonplaats: DenHaag;
-Gender : male;

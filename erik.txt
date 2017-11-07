@@ -1,5 +1,0 @@
-
-naam: erik;
-adres: erikstraat;
-Woonplaats: erksStat;
-Gender : male;
