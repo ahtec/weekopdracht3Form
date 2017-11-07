@@ -5,6 +5,7 @@
         <?php
         require_once 'loginGegevens.php';
         $allesOK = FALSE;
+        $returnText ="";
         $connectie = new mysqli(DBSERVER, DBUSER, DBPASS, DBASE);
 
         if ($connectie->connect_error) {
@@ -28,6 +29,7 @@
 
         if (naamBestaat($naam, $connectie)) {
             // naam bestaat al, we doen niets
+            $returnText =  "Naam $naam bestaat al";
         } else {
 
             $query = "INSERT INTO `personen` (`naam`, `adres`, `woonplaats`, `gender`) VALUES ( '$naam', '$adres', '$woonplaats', '$gender'  )";
@@ -45,10 +47,10 @@
                 echo "<br>" . mysqli_error($connectie);
             }
         }
-        if($allesOK) {
-            header("Location: index.php");   // terug naar index.php
+//        if($allesOK) {
+            header("Location: index.php?errorText=$returnText ");   // terug naar index.php
                 exit;
-        }
+//        }
 
         //  Begin van de functies ///////
         function naamBestaat($paramNaam, $connectie) {

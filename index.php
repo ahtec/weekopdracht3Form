@@ -6,11 +6,19 @@ and open the template in the editor.
 -->
 <html  >
     <head>
+        <style>
+      p {
+          align-self: center;
+       background-color: red;
+       color: white;
+}
+
+        </style>
         <script>
 
             function validate(form) {
                 fail = validateNaam(form.naam.value)
-                
+
                 if (fail == "")
                     return true
                 else {
@@ -28,7 +36,12 @@ and open the template in the editor.
     </head>
     <body STYLE="font-size: 20px; font-family:Courier New, Courier, monospace;">
         <?php
-        // sow personen
+        $var1 = count($_GET);
+        if ($var1 == 1) {        // sow personen
+            echo "<p>";
+            echo $_GET['errorText'];
+            echo "</p>";
+        }
         require_once 'loginGegevens.php';
         $conextion = new mysqli(DBSERVER, DBUSER, DBPASS, DBASE);
 
@@ -69,20 +82,20 @@ and open the template in the editor.
         <hr>
         <form name="personenForm" action="voegPersoonToe.php" onsubmit="return validate(this)" >
             <table>
-        <tr> <td> Naam           </td> <td>  <input type="text" name="naam" >  </td>
-        <tr> <td> Adres          </td> <td>  <input type="text" name="adres" ></td>
-        <tr> <td> Woonplaats     </td> <td>  <input type="text" name="woonplaats" ></td>
-        <tr> <td>   
-                <input type="radio" name="gender" value="male" checked> Male <br>
-                <input type="radio" name="gender" value="female">       Female<br>
-            </td>
+                <tr> <td> Naam           </td> <td>  <input type="text" name="naam" >  </td>
+                <tr> <td> Adres          </td> <td>  <input type="text" name="adres" ></td>
+                <tr> <td> Woonplaats     </td> <td>  <input type="text" name="woonplaats" ></td>
+                <tr> <td>   
+                        <input type="radio" name="gender" value="male" checked> Male <br>
+                        <input type="radio" name="gender" value="female">       Female<br>
+                    </td>
             </table>
-        <br>
-        <input type="submit" value="bewaar persoon">
-    </form>   
+            <br>
+            <input type="submit" value="bewaar persoon">
+        </form>   
 
-    <form name="drop" action="dropPersonen.php">
-        <input type="submit" value="drop tabel personen  en maak weer aan">
-    </form>
-</body>
+        <form name="drop" action="dropPersonen.php">
+            <input type="submit" value="drop tabel personen  en maak weer aan">
+        </form>
+    </body>
 </html>
