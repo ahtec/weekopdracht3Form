@@ -23,7 +23,7 @@ $query = 'USE dbpersonen ';
 $result = $conextion->query($query);
 
 // maak tabel personen
-$query = "CREATE TABLE  personen ( naam VARCHAR(30)   , adres VARCHAR(30)  , woonplaats VARCHAR(30) , gender VARCHAR(30) , objectPersoon BLOB , PRIMARY KEY (naam) )";
+$query = "CREATE TABLE  personen ( naam VARCHAR(30)   , adres VARCHAR(30)  , woonplaats VARCHAR(30) , gender VARCHAR(30) , objectPersoon VARCHAR(1000) , PRIMARY KEY (naam) )";
 //ALTER TABLE `personen` ADD `objectPersoon` BLOB NOT NULL AFTER `gender`;
 //$query = "CREATE TABLE  personen ( naam VARCHAR(30))   , adres VARCHAR(30)  , woonplaats VARCHAR(30) , gender VARCHAR(30) PRIMARY KEY (naam) )";
 //$query = 'CREATE TABLE  personen (naam VARCHAR(30))   , (adres VARCHAR(30) , (adres VARCHAR(30))  , (woonplaats VARCHAR(30)) ,(gender VARCHAR(30))';
@@ -31,10 +31,10 @@ echo "<br>\n".$query;
 
 $result = $conextion->query($query);
 
-$query =  "ALTER TABLE `personen` CHANGE `objectPersoon` `objectPersoon` LONGTEXT NULL DEFAULT NULL";
+//$query =  "ALTER TABLE `personen` CHANGE `objectPersoon` `objectPersoon` LONGTEXT NULL DEFAULT NULL";
 //$query =  "ALTER TABLE `personen` CHANGE `objectPersoon` `objectPersoon` BLOB  NULL";
 //$query = "ALTER TABLE personen ADD objectPersoon BLOB  BINARY AFTER gender";
-$result = $conextion->query($query);
+//$result = $conextion->query($query);
 
 
 

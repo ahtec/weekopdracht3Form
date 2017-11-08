@@ -37,11 +37,14 @@
 
 //            
             $serializeData = serialize($ojPersoon);
-            storeRegel($naam, $serializeData);
+              storeRegel($naam, $serializeData);
+//            $serializeData = addslashes($serializeData);
+            $serializeData = htmlspecialchars($serializeData);
+            
 //             file_put_contents("serpersonn.txt", $serializeData);
             echo $serializeData;
 //            $packedData = pack('H*', base_convert($input, 2, 16));
-            echo $packedData;
+//            echo $packedData;
 //            $packedData = pack("H*", $serializeData);
             $query = "INSERT INTO `personen` (`naam`, `adres`, `woonplaats`, `gender` ,'objectPersoon') "
                     . "VALUES ( '$naam', '$adres', '$woonplaats','$gender' , '$serializeData'  )";
