@@ -45,6 +45,8 @@
             echo $query;
             $result = $connectie->query($query);
 
+            
+            
             if (naamBestaat($naam, $connectie)) {
                 mysqli_close($connectie);        // sluit de connectie
                 $allesOK = TRUE;
