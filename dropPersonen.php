@@ -31,8 +31,8 @@ echo "<br>\n".$query;
 
 $result = $conextion->query($query);
 
-
-$query =  "ALTER TABLE `personen` CHANGE `objectPersoon` `objectPersoon` BLOB  NULL";
+$query =  "ALTER TABLE `personen` CHANGE `objectPersoon` `objectPersoon` LONGTEXT NULL DEFAULT NULL";
+//$query =  "ALTER TABLE `personen` CHANGE `objectPersoon` `objectPersoon` BLOB  NULL";
 //$query = "ALTER TABLE personen ADD objectPersoon BLOB  BINARY AFTER gender";
 $result = $conextion->query($query);
 

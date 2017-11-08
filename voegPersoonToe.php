@@ -40,10 +40,11 @@
             storeRegel($naam, $serializeData);
 //             file_put_contents("serpersonn.txt", $serializeData);
             echo $serializeData;
-
-            $packedData = pack($serializeData);
+//            $packedData = pack('H*', base_convert($input, 2, 16));
+            echo $packedData;
+//            $packedData = pack("H*", $serializeData);
             $query = "INSERT INTO `personen` (`naam`, `adres`, `woonplaats`, `gender` ,'objectPersoon') "
-                    . "VALUES ( '$naam', '$adres', '$woonplaats','$gender' , '$packedData'  )";
+                    . "VALUES ( '$naam', '$adres', '$woonplaats','$gender' , '$serializeData'  )";
 //$query = "INSERT INTO `personen` (`naam`, `adres`, `woonplaats`, `gender`,'objectPersoon') VALUES ( '$naam', '$adres', '$woonplaats','$gender' , {$serializeData} )";
 //
 ////Recoverable fatal error: Object of class persoon could not be converted to string in C:\xampp\htdocs\weekOpdracht3\voegPersoonToe.php on line 39
@@ -90,6 +91,13 @@
             fwrite($fh, $erin);
             fwrite($fh, ";");
             fclose($fh);
+        }
+
+        function convert2bin($regel) {
+            $eruit = "";
+            for ($i = 0; $i < count($regel); $i++) {
+                
+            }
         }
         ?>
 
