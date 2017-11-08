@@ -34,27 +34,29 @@
         } else {
             $ojPersoon = new persoon();
             $ojPersoon->naam = "objectpersoon naam";
-            
+
 //            
-            $serializeData =    serialize($ojPersoon);
+            $serializeData = serialize($ojPersoon);
             storeRegel($naam, $serializeData);
 //             file_put_contents("serpersonn.txt", $serializeData);
-echo $serializeData;
+            echo $serializeData;
+
+            $packedData = pack($serializeData);
             $query = "INSERT INTO `personen` (`naam`, `adres`, `woonplaats`, `gender` ,'objectPersoon') "
-                    . "VALUES ( '$naam', '$adres', '$woonplaats','$gender' ,BINARY '$serializeData'  )";
+                    . "VALUES ( '$naam', '$adres', '$woonplaats','$gender' , '$packedData'  )";
 //$query = "INSERT INTO `personen` (`naam`, `adres`, `woonplaats`, `gender`,'objectPersoon') VALUES ( '$naam', '$adres', '$woonplaats','$gender' , {$serializeData} )";
 //
 ////Recoverable fatal error: Object of class persoon could not be converted to string in C:\xampp\htdocs\weekOpdracht3\voegPersoonToe.php on line 39
 //
 //            $query = "INSERT INTO `personen` (`naam`, `adres`, `woonplaats`, `gender`) VALUES ( '$naam', '$adres', '$woonplaats', '$gender'  )";
 
-            
-            
+
+            echo "<br>";
             echo $query;
             $result = $connectie->query($query);
 
-            
-            
+
+
             if (naamBestaat($naam, $connectie)) {
                 mysqli_close($connectie);        // sluit de connectie
                 $allesOK = TRUE;
