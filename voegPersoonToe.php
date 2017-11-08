@@ -4,8 +4,9 @@
     <div>
         <?php
         require_once 'loginGegevens.php';
+        require_once 'objectPersoon.php';
         $allesOK = FALSE;
-        $returnText ="";
+        $returnText = "";
         $connectie = new mysqli(DBSERVER, DBUSER, DBPASS, DBASE);
 
         if ($connectie->connect_error) {
@@ -29,18 +30,24 @@
 
         if (naamBestaat($naam, $connectie)) {
             // naam bestaat al, we doen niets
-            $returnText =  "Naam $naam bestaat al";
+            $returnText = "Naam $naam bestaat al";
         } else {
+            $ojPersoon = new persoon();
+//            
+            $serializeData = $ojPersoon;
 
-            $query = "INSERT INTO `personen` (`naam`, `adres`, `woonplaats`, `gender`) VALUES ( '$naam', '$adres', '$woonplaats', '$gender'  )";
+            $query = "INSERT INTO `personen` (`naam`, `adres`, `woonplaats`, `gender`,'objectPersoon') VALUES ( '$naam', '$adres', '$woonplaats', '$gender' ,'' )";
 
+//            $query = "INSERT INTO `personen` (`naam`, `adres`, `woonplaats`, `gender`) VALUES ( '$naam', '$adres', '$woonplaats', '$gender'  )";
+
+            
+            
             echo $query;
             $result = $connectie->query($query);
 
             if (naamBestaat($naam, $connectie)) {
                 mysqli_close($connectie);        // sluit de connectie
                 $allesOK = TRUE;
-                
             } else {
                 // persoon is  NIET  toegevoegd
                 echo "Er ging iets mis met het toevoegen van :" . $query;
@@ -48,10 +55,10 @@
             }
         }
 //        if($allesOK) {
-            header("Location: index.php?errorText=$returnText ");   // terug naar index.php
-                exit;
-//        }
+//        header("Location: index.php?errorText=$returnText ");   // terug naar index.php
+        exit;
 
+//        }
         //  Begin van de functies ///////
         function naamBestaat($paramNaam, $connectie) {
             $eruit = TRUE;

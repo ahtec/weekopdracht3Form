@@ -25,7 +25,6 @@ and open the template in the editor.
                     alert(fail);
                     return false
                 }
-
             }
 
             function validateNaam(field)
@@ -37,7 +36,7 @@ and open the template in the editor.
     <body STYLE="font-size: 20px; font-family:Courier New, Courier, monospace;">
         <?php
         $var1 = count($_GET);
-        if ($var1 == 1) {        // sow personen
+        if ($var1 == 1) {        // show personen
             echo "<p>";
             echo $_GET['errorText'];
             echo "</p>";
