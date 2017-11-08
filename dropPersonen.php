@@ -29,9 +29,8 @@ $query = "CREATE TABLE  personen ( naam VARCHAR(30)   , adres VARCHAR(30)  , woo
 echo "<br>\n".$query;
 
 $result = $conextion->query($query);
-
-$query = "ALTER TABLE personen ADD objectPersoon BLOB NOT NULL AFTER gender:";
-
+$query = "ALTER TABLE personen ADD objectPersoon BLOB NOT NULL AFTER gender";
+//
 $result = $conextion->query($query);
 
 

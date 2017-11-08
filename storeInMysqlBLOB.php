@@ -1,6 +1,6 @@
 <?php
 
-First: Create a table, for example:
+/* *First: Create a table, for example:
 CREATE TABLE picture (
 ID	INTEGER AUTO_INCREMENT,
 IMAGE	BLOB, 
@@ -8,6 +8,8 @@ PRIMARY KEY (ID)
 ) ENGINE=InnoDB;
 
 2) To read a image to a QByteArray
+*/
+
 
 QString fileName = "IMAGE.JPG";
 
@@ -25,6 +27,7 @@ f.close();
 
 // Writing the image into table
 QSqlDatabase::database().transaction();
+
 QSqlQuery query;
 query.prepare( "INSERT INTO picture ( IMAGE ) VALUES (:IMAGE)" );
 query.bindValue(":IMAGE", ba);
@@ -35,7 +38,7 @@ QSqlDatabase::database().rollback();
 } else
 QSqlDatabase::database().commit();
 
-3) Now, recovery the field with the image
+//3) Now, recovery the field with the image
 
 int idx = 1; // The records ID to recover
 
