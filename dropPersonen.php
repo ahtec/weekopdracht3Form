@@ -30,6 +30,12 @@ echo "<br>\n".$query;
 
 $result = $conextion->query($query);
 
+$query = "ALTER TABLE personen ADD objectPersoon BLOB NOT NULL AFTER gender:";
+
+$result = $conextion->query($query);
+
+
+
 echo "<br> connectie\n";
 echo $conextion->connect_error;
 //

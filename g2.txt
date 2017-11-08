@@ -1,5 +1,0 @@
-
-naam: g2;
-adres: ggadres;
-Woonplaats: g2 woon  plaats;
-Gender : female;

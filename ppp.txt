@@ -1,5 +1,0 @@
-
-naam: ppp;
-adres: ;
-Woonplaats: ;
-Gender : male;

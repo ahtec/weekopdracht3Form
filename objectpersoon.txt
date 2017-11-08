@@ -1,5 +1,0 @@
-
-naam: objectpersoon;
-adres: ;
-Woonplaats: ;
-Gender : male;
