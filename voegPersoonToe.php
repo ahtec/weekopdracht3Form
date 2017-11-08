@@ -37,9 +37,11 @@
             $serializeData = $ojPersoon;
 
             $query = "INSERT INTO `personen` (`naam`, `adres`, `woonplaats`, `gender` ,'objectPersoon') "
-                    . "VALUES ( '$naam', '$adres', '$woonplaats','$gender' ,{$serializeData}  )";
+                    . "VALUES ( '$naam', '$adres', '$woonplaats','$gender' ,'{$serializeData}'  )";
 //$query = "INSERT INTO `personen` (`naam`, `adres`, `woonplaats`, `gender`,'objectPersoon') VALUES ( '$naam', '$adres', '$woonplaats','$gender' , {$serializeData} )";
-//Recoverable fatal error: Object of class persoon could not be converted to string in C:\xampp\htdocs\weekOpdracht3\voegPersoonToe.php on line 39
+//
+////Recoverable fatal error: Object of class persoon could not be converted to string in C:\xampp\htdocs\weekOpdracht3\voegPersoonToe.php on line 39
+//
 //            $query = "INSERT INTO `personen` (`naam`, `adres`, `woonplaats`, `gender`) VALUES ( '$naam', '$adres', '$woonplaats', '$gender'  )";
 
             
