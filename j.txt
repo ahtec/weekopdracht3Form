@@ -1,5 +1,0 @@
-
-naam: j;
-adres: ;
-Woonplaats: ;
-Gender : male;

@@ -9,8 +9,7 @@ PRIMARY KEY (ID)
 
 2) To read a image to a QByteArray
 */
-
-
+/*
 QString fileName = "IMAGE.JPG";
 
 QImage image(filaName);

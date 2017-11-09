@@ -40,14 +40,16 @@
               storeRegel($naam, $serializeData);
 //            $serializeData = addslashes($serializeData);
             $serializeData = htmlspecialchars($serializeData);
+            $serializeData = "ggggg";
             
 //             file_put_contents("serpersonn.txt", $serializeData);
             echo $serializeData;
+            var_dump($serializeData);
 //            $packedData = pack('H*', base_convert($input, 2, 16));
 //            echo $packedData;
 //            $packedData = pack("H*", $serializeData);
-            $query = "INSERT INTO `personen` (`naam`, `adres`, `woonplaats`, `gender` ,'objectPersoon') "
-                    . "VALUES ( '$naam', '$adres', '$woonplaats','$gender' , '$serializeData'  )";
+//              $query = "INSERT INTO `personen` (`naam`, `adres`, `woonplaats`, `gender`, `objectPersoon`) VALUES ('naam', NULL, NULL, NULL, 'hhhhhhh')";
+            $query = "INSERT INTO `personen` (`naam`, `adres`, `woonplaats`, `gender` ) VALUES ( '$naam', '$adres', '$woonplaats', '$gender'  )";
 //$query = "INSERT INTO `personen` (`naam`, `adres`, `woonplaats`, `gender`,'objectPersoon') VALUES ( '$naam', '$adres', '$woonplaats','$gender' , {$serializeData} )";
 //
 ////Recoverable fatal error: Object of class persoon could not be converted to string in C:\xampp\htdocs\weekOpdracht3\voegPersoonToe.php on line 39
@@ -71,7 +73,7 @@
             }
         }
 //        if($allesOK) {
-//        header("Location: index.php?errorText=$returnText ");   // terug naar index.php
+        header("Location: index.php?errorText=$returnText ");   // terug naar index.php
         exit;
 
 //        }

@@ -72,6 +72,7 @@ and open the template in the editor.
             echo "<td>" . $row['adres'] . "</td>";
             echo "<td>" . $row['woonplaats'] . "</td>";
             echo "<td>" . $row['gender'] . "</td>";
+            echo "<td>" . $row['objectPersoon'] . "</td>";
             echo "</tr>";
         }
         echo "</table>";
