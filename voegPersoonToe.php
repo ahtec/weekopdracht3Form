@@ -14,6 +14,7 @@
         }
 
         $naam = $_GET['naam'];
+        $naam = htmlspecialchars($naam);
         $adres = $_GET['adres'];
         $woonplaats = $_GET['woonplaats'];
         $gender = $_GET['gender'];
@@ -68,11 +69,12 @@
                 $allesOK = TRUE;
             } else {
                 // persoon is  NIET  toegevoegd
-                echo "Er ging iets mis met het toevoegen van :" . $query;
-                echo "<br>" . mysqli_error($connectie);
+                $returnText =  "Er ging iets mis met het toevoegen van :" . $query.  "<br>" . mysqli_error($connectie);
+//                $returnText = "testttt";
             }
         }
 //        if($allesOK) {
+//        $returnText = "testttt";
         header("Location: index.php?errorText=$returnText ");   // terug naar index.php
         exit;
 
