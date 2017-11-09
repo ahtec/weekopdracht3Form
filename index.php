@@ -7,11 +7,11 @@ and open the template in the editor.
 <html  >
     <head>
         <style>
-      p {
-          align-self: center;
-       background-color: red;
-       color: white;
-}
+            p {
+                align-self: center;
+                background-color: red;
+                color: white;
+            }
 
         </style>
         <script>
@@ -29,8 +29,19 @@ and open the template in the editor.
 
             function validateNaam(field)
             {
-                return (field == "") ? "Naam persoon mag niet leeg zijn\n" : ""
+//                alert(field);
+                var pattern = new RegExp(/[~`!#$%\^&*+=\-\[\]\\';,/{}|\\":<>\?]/); //unacceptable chars
+                if (pattern.test(field)) {
+                    return ("Gebruik alleen alpha en numerieke characters");
+                }
+                if (field == "") {
+                    return "Naam mag niet leeg zijn";
+                }
+                return "" ;
             }
+
+
+
         </script>
     </head>
     <body STYLE="font-size: 20px; font-family:Courier New, Courier, monospace;">

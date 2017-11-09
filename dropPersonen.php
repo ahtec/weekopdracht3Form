@@ -48,5 +48,5 @@ echo $conextion->connect_error;
 echo $result;
 
 //$sql = "ALTER TABLE `personen`  ADD `objectPersoon` MEDIUMBLOB NOT NULL  AFTER `gender`";
-//                header("Location: index.php");
+                header("Location: index.php");
 ?>
